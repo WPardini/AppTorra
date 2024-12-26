@@ -7,10 +7,10 @@
 		// Função que detecta o sistema operacional do dispositivo
 		function redirectToApp() {             var userAgent = navigator.userAgent || navigator.vendor || window.opera;                         
 		// Verificando se é iOS
-		if (/iPhone|iPad|iPod/i.test(userAgent)) {                 window.location.href = "https://apps.apple.com/br/app/torra-odonto/id6738099078"; // Substitua pelo link do seu app na App Store            
+		if (/iPad|iPhone|iPod|mac/.test(userAgent) && !window.MSStream) {                 window.location.href = "https://apps.apple.com/br/app/torra-odonto/id6738099078"; // Substitua pelo link do seu app na App Store            
 		}            
 		// Verificando se é Android
-		else if (/android/i.test(userAgent)) {                 window.location.href = "https://play.google.com/store/apps/details?id=br.com.torra"; // Substitua pelo link do seu app no Google Play            
+		else if (/android|windows/i.test(userAgent)) {                 window.location.href = "https://play.google.com/store/apps/details?id=br.com.torra"; // Substitua pelo link do seu app no Google Play            
 		}            
 		else { alert("Sistema operacional não detectado corretamente. Acesse manualmente a loja de aplicativos."); } } 
 		// Chama a função para redirecionar quando a página carregar
